@@ -75,3 +75,8 @@ select model, avg(price) as avgPrice from cars group by model;
 
 select * from cars where price > (select avg(price) as avgPrice from cars);
 
+
+delete from users where id in (1,3,4);
+
+update users set name='Masha' where id=33;
+
