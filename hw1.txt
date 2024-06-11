@@ -1,0 +1,77 @@
+ use temolena;
+
+show tables ;
+
+create table new
+(
+    id int primary key auto_increment,
+    name varchar(255) not null ,
+    age int not null
+);
+
+insert into new values (null, 'Olena', 22);
+
+select * from new;
+
+ select * from cars;
+
+ select * from cars where model='bmw';
+
+ select * from cars where model like '_o%o_';
+
+ select * from cars where year>2000;
+
+ select * from cars where year<2015;
+
+ select * from cars where year=2008 or year=2009 or year=2010;
+ select * from cars where year not in (2008, 2009, 2010);
+
+ select * from users where age != 30;
+
+ select * from users where age between 20 and 30;
+
+ select * from users where age not between 20 and 30;
+
+ select * from users where age>=20 and age<=30;
+
+ select * from cars where model='bmw' and year >2014;
+
+ select * from cars where model='audi' and year <2014;
+
+ select * from users where age in (20, 25, 16, 11, 2, 36, 88, 45);
+
+ select * from users where age not in (20, 25, 16, 11, 2, 36, 88, 45);
+
+ select * from cars where length( model ) > 8;
+
+ select * from cars where year = price ;
+
+ select * from users where age>20 order by name asc ;
+
+ select * from users where age>20 order by age desc;
+
+ select * from cars limit 5;
+
+ select * from cars order by year limit 10 offset 5;
+
+ select avg(price) as avgPrice from cars where model ='kia';
+
+ select count(*)as count, model  from cars group by model;
+
+
+
+ select * from users where age>20 order by name;
+
+
+ select count(*) as count, model  from cars group by model;
+
+
+
+select model, avg(price) as avgPrice from cars group by model;
+
+ select model,  count(*) as count from cars group by model order by count desc  limit 1;
+
+
+
+select * from cars where price > (select avg(price) as avgPrice from cars);
+
